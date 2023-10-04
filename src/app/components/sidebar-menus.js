@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import {
   IconChevronDown,
   IconChevronUp,
@@ -29,7 +30,17 @@ export const CreatorStudio = () => {
           </div>
 
           <div className="flex items-center space-x-2 pt-4">
-            <IconChartBar />
+            <figure className="w-6 h-5 relative">
+              <Image
+                src="/images/analytics.svg"
+                fill
+                style={{
+                  objectFit: "cover",
+                }}
+                sizes="100vh"
+                alt=""
+              />
+            </figure>
             <p className="text-lg">Analytics</p>
           </div>
         </div>

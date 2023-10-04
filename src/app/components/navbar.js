@@ -14,7 +14,7 @@ const Navbar = () => {
     setOpen(!isOpen);
   };
   return (
-    <nav className="py-2 w-full">
+    <nav className="bg-white z-[1000] py-2 w-full">
       <div className="px-3 flex items-center">
         <figure className="" onClick={toggleSideBar}>
           <Image
@@ -42,7 +42,48 @@ const Navbar = () => {
         </div>
       </div>
 
-      <Divider my="xs" variant="dotted" className="-pt-4" />
+      <Divider my="xs" />
+
+      <div className="z-[1000]">
+        <div className="h-9 mx-2 bg-gradient-to-r from-blue-600 to-purple-500 rounded-3xl flex">
+          <div className="flex justify-between ml-4 items-center">
+            {faker.datatype.array(3).map((item) => (
+              <figure key={item} className="-ml-3 rounded-full border">
+                <Image
+                  className="rounded-full"
+                  src={faker.image.fashion(512, 512, consume_data)}
+                  style={{ objectFit: "cover" }}
+                  width={30}
+                  height={30}
+                  alt=""
+                />
+              </figure>
+            ))}
+
+            <p className="text-sm text-white font-semibold pl-1">
+              +{faker.number.int(1000)}
+            </p>
+
+            <p className="text-sm text-white pl-1 truncate w-24">
+              {faker.lorem.words(4)}
+            </p>
+
+            <p className="text-white pl-1">#{faker.lorem.word(10)}</p>
+            <figure className="ml-4">
+              <Image
+                src="/images/speech.svg"
+                style={{
+                  objectFit: "cover",
+                }}
+                width={18}
+                height={18}
+                alt=""
+              />
+            </figure>
+          </div>
+        </div>
+      </div>
+
       <Sidebar isOpen={isOpen} toggleSideBar={toggleSideBar} />
     </nav>
   );
