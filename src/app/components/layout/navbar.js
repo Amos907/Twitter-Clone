@@ -15,7 +15,7 @@ const Navbar = () => {
   };
   return (
     <nav className="bg-white z-[1000] py-2 w-full">
-      <div className="px-3 flex items-center">
+      <div className="px-3 flex items-center md:hidden">
         <figure className="" onClick={toggleSideBar}>
           <Image
             className="rounded-full"
@@ -44,7 +44,7 @@ const Navbar = () => {
 
       <Divider my="xs" />
 
-      <div className="z-[1000]">
+      <div className="z-[1000] md:hidden">
         <div className="h-9 mx-2 bg-gradient-to-r from-blue-600 to-purple-500 rounded-3xl flex">
           <div className="flex justify-between ml-4 items-center">
             {faker.datatype.array(3).map((item) => (
