@@ -26,6 +26,7 @@ import {
   IconDotsCircleHorizontal,
 } from "@tabler/icons-react";
 import PostOptions from "./components/post-options-modal";
+import OffsetSectionContainer from "./components/offset-section-container";
 
 export default function Home() {
   const consume_data = process.env.NEXT_PUBLIC_FAKER_DATA_HEAVY === "true";
@@ -35,93 +36,8 @@ export default function Home() {
   };
   return (
     <main>
-      <section className="flex lg:justify-center">
-        <div className="hidden md:flex justify-end md:w-1/6 mr-8 h-80">
-          <div className="space-y-3 mt-2">
-            <div>
-              <div className="pb-4">
-                <IconBrandX size={36} />
-              </div>
-              <div className="flex items-center py-4">
-                <IconHome2 size={32} />
-                <h2 className="hidden lg:block text-xl ml-4">Home</h2>
-              </div>
-
-              <div className="flex items-center py-4">
-                <IconSearch size={32} />
-                <h2 className="hidden lg:block text-xl ml-4">Explore</h2>
-              </div>
-
-              <div className="flex items-center py-4">
-                <IconBell size={32} />
-                <h2 className="hidden lg:block text-xl ml-4">Notifications</h2>
-              </div>
-
-              <div className="flex items-center py-4">
-                <IconMail size={32} />
-                <h2 className="hidden lg:block text-xl ml-4">Messages</h2>
-              </div>
-
-              <div className="flex items-center space-x-4 py-4">
-                <IconNotes size={32} />
-                <h2 className="hidden lg:block text-xl ml-4">Lists</h2>
-              </div>
-
-              <div className="flex items-center space-x-4 py-4">
-                <IconBookmark size={32} />
-                <h2 className="hidden lg:block text-xl ml-4">Bookmarks</h2>
-              </div>
-
-              <div className="flex items-center space-x-4 py-4">
-                <IconUsers size={32} />
-                <h2 className="hidden lg:block text-xl ml-4">Communities</h2>
-              </div>
-
-              <div className="flex items-center space-x-4 py-4">
-                <IconBrandX size={32} />
-                <h2 className="hidden lg:block text-xl ml-4">Premium</h2>
-              </div>
-
-              <div className="flex items-center py-4">
-                <IconUser size={32} />
-                <h2 className="hidden lg:block text-xl ml-4">Profile</h2>
-              </div>
-
-              <div className="flex items-center py-4">
-                <IconDotsCircleHorizontal size={32} />
-                <h2 className="hidden lg:block text-xl ml-4">More</h2>
-              </div>
-
-              <div className="flex items-center space-x-4 py-4">
-                <figure>
-                  <Image
-                    src="/images/post.svg"
-                    style={{ objectFit: "cover" }}
-                    width={36}
-                    height={36}
-                    alt=""
-                  />
-                </figure>
-                <h2 className="hidden lg:block text-xl ml-4">Post</h2>
-              </div>
-            </div>
-
-            <div>
-              <figure className="">
-                <Image
-                  className="rounded-full"
-                  src={faker.image.nature(512, 512, consume_data)}
-                  style={{ objectFit: "cover" }}
-                  width={40}
-                  height={40}
-                  alt=""
-                />
-              </figure>
-            </div>
-          </div>
-        </div>
-
-        <div className="flex-grow md:border-l border-r md:w-1/2 overflow-y-scroll flex-shrink h-[100%] lg:w-1/4 lg:flex-none">
+      <OffsetSectionContainer>
+        <div className="flex-grow md:border-l border-r overflow-y-scroll flex-shrink h-[100%] md:w-3/4 lg:w-1/3 md:flex-none">
           <Navbar />
           <Divider my="xs" />
           <div className="">
@@ -145,7 +61,7 @@ export default function Home() {
                         <p className="font-bold">{faker.lorem.words(1)}</p>
                         <figure>
                           <Image
-                            src="/images/twitter-blue.png"
+                            src="/images/icons/twitter-blue.png"
                             style={{
                               objectFit: "cover",
                             }}
@@ -193,7 +109,7 @@ export default function Home() {
                     <div className="flex space-x-1">
                       <figure className="w-5 h-5 relative">
                         <Image
-                          src="/images/heart-red.svg"
+                          src="/images/icons/heart-red.svg"
                           fill
                           style={{
                             objectFit: "cover",
@@ -208,7 +124,7 @@ export default function Home() {
                     <div className="flex space-x-1">
                       <figure className="w-5 h-5 relative">
                         <Image
-                          src="/images/retweet-green.svg"
+                          src="/images/icons/retweet-green.svg"
                           fill
                           style={{
                             objectFit: "cover",
@@ -223,7 +139,7 @@ export default function Home() {
                     <div className="flex space-x-1">
                       <figure className="w-5 h-5 relative">
                         <Image
-                          src="/images/analytics-post.svg"
+                          src="/images/icons/analytics-post.svg"
                           fill
                           style={{
                             objectFit: "cover",
@@ -253,7 +169,7 @@ export default function Home() {
           </div> */}
         </div>
 
-        <div className="hidden md:w-1/6 md:block mx-10 mt-2">
+        <div className="hidden lg:w-1/6 lg:block mx-10 mt-2">
           <div className="hidden rounded-lg bg-light-200  md:flex justify-between w-80 h-10 my-auto mb-2">
             <div className="flex-grow justify-center pl-4">
               <Autocomplete
@@ -303,7 +219,7 @@ export default function Home() {
 
                   <figure>
                     <Image
-                      src="/images/twitter-blue.png"
+                      src="/images/icons/twitter-blue.png"
                       style={{
                         objectFit: "cover",
                       }}
@@ -313,7 +229,7 @@ export default function Home() {
                     />
                   </figure>
 
-                  <p className="text-sm text-light-400">is hosting</p>
+                  <p className="text-sm text-gray">is hosting</p>
                 </div>
 
                 <div className="flex justify-between">
@@ -330,7 +246,7 @@ export default function Home() {
                       />
                     </figure>
 
-                    <p className="text-light-400 text-base">+7</p>
+                    <p className="text-gray text-base">+7</p>
                   </div>
                 </div>
               </div>
@@ -342,12 +258,12 @@ export default function Home() {
             {faker.datatype.array(10).map((item) => (
               <div key={item} className="">
                 <div className="flex justify-between">
-                  <p className="text-light-400">{faker.lorem.words(2)}</p>
+                  <p className="text-gray">{faker.lorem.words(2)}</p>
                   <IconDots />
                 </div>
                 <div className="">
                   <p className="font-bold text-base">{faker.lorem.words(1)}</p>
-                  <p className="text-light-400 text-sm">
+                  <p className="text-gray text-sm">
                     {faker.number.int(1000)}K {""} posts
                   </p>
                 </div>
@@ -376,7 +292,7 @@ export default function Home() {
                       <p>{faker.lorem.words(2)}</p>
                       <figure>
                         <Image
-                          src="/images/twitter-blue.png"
+                          src="/images/icons/twitter-blue.png"
                           style={{
                             objectFit: "cover",
                           }}
@@ -386,7 +302,7 @@ export default function Home() {
                         />
                       </figure>
                     </div>
-                    <p className="text-light-400">@{faker.lorem.words(2)}</p>
+                    <p className="text-gray">@{faker.lorem.words(2)}</p>
                   </div>
                 </div>
 
@@ -397,7 +313,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </OffsetSectionContainer>
     </main>
   );
 }
