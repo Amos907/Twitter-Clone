@@ -36,23 +36,26 @@ const SidebarMain = () => {
 
           <Link href="/explore" className="flex items-center py-4">
             <IconSearch size={32} />
-            <h2 className="hidden lg:block text-xl ml-4">Explore</h2>
+            <h2 className="hidden lg:flex text-xl ml-4">Explore</h2>
           </Link>
 
-          <div className="flex items-center py-4">
+          <Link href="/notifications" className="flex items-center py-4">
             <IconBell size={32} />
             <h2 className="hidden lg:block text-xl ml-4">Notifications</h2>
-          </div>
+          </Link>
 
           <div className="flex items-center py-4">
             <IconMail size={32} />
             <h2 className="hidden lg:block text-xl ml-4">Messages</h2>
           </div>
 
-          <div className="flex items-center space-x-4 py-4">
+          <Link
+            href={`/${faker.person.lastName()}/lists`}
+            className="flex items-center space-x-4 py-4"
+          >
             <IconNotes size={32} />
             <h2 className="hidden lg:block text-xl ml-4">Lists</h2>
-          </div>
+          </Link>
 
           <div className="flex items-center space-x-4 py-4">
             <IconBookmark size={32} />

@@ -24,8 +24,8 @@ const Explore = () => {
   return (
     <main>
       <OffsetSectionContainer>
-        <div className="md:border-l border-r border-gray-200 overflow-y-scroll flex-shrink h-[100%] md:w-3/4 lg:w-1/3 md:flex-none">
-          <header className="flex justify-around mt-2 space-x-2">
+        <div>
+          <header className="flex justify-around mt-2 space-x-2 mx-3">
             <figure className="md:hidden" onClick={toggleSideBar}>
               <Image
                 className="rounded-full"
@@ -37,7 +37,7 @@ const Explore = () => {
               />
             </figure>
 
-            <div className="flex-grow rounded-lg bg-light-200 flex justify-between h-10 my-auto mb-2">
+            <div className="w-full rounded-lg bg-light-200 flex justify-between h-10 my-auto mb-2">
               <div className="justify-center pl-4">
                 <Autocomplete
                   variant="unstyled"
@@ -156,6 +156,7 @@ const Explore = () => {
                           src={faker.image.fashion(512, 512, consume_data)}
                           style={{ objectFit: "cover" }}
                           fill
+                          sizes="100vh"
                           alt=""
                         />
                       </figure>
@@ -261,7 +262,51 @@ const Explore = () => {
             </div>
           ))}
         </div>
-        <div className="hidden lg:w-1/6 lg:block mx-10 mt-2"></div>
+        <div>
+          <div className="bg-light-200 rounded-lg p-3 mt-4 space-y-3">
+            <p className="font-bold text-xl">Who to follow</p>
+            {faker.datatype.array(3).map((item) => (
+              <div className="flex justify-between" key={item}>
+                <div className="flex space-x-2">
+                  <figure className="">
+                    <Image
+                      className="rounded-full"
+                      src={faker.image.fashion(512, 512, consume_data)}
+                      style={{ objectFit: "cover" }}
+                      width={44}
+                      height={44}
+                      alt=""
+                    />
+                  </figure>
+
+                  <div>
+                    <div className="flex space-x-1 items-center">
+                      <p>{faker.lorem.words(2)}</p>
+                      <figure>
+                        <Image
+                          src="/images/icons/twitter-blue.png"
+                          style={{
+                            objectFit: "cover",
+                          }}
+                          width={18}
+                          height={18}
+                          alt=""
+                        />
+                      </figure>
+                    </div>
+                    <p className="text-gray">@{faker.lorem.words(2)}</p>
+                  </div>
+                </div>
+
+                <Button color="dark" className="rounded-xl">
+                  follow
+                </Button>
+              </div>
+            ))}
+
+            <p className="text-blue cursor-pointer py-2">Show more</p>
+          </div>
+        </div>
       </OffsetSectionContainer>
       <Sidebar isOpen={isOpen} toggleSideBar={toggleSideBar} />
     </main>
