@@ -4,17 +4,11 @@ import React from "react";
 import { Divider, Drawer } from "@mantine/core";
 import { faker } from "@faker-js/faker";
 import Image from "next/image";
-import {
-  IconBrandX,
-  IconPlus,
-  IconUser,
-  IconNotes,
-  IconBookmark,
-  IconUsers,
-  IconCash,
-} from "@tabler/icons-react";
+import Link from "next/link";
+import { IconPlus } from "@tabler/icons-react";
 
 import { CreatorStudio, ProfessionalTools, Settings } from "./sidebar-menus";
+import { itemsDrawer } from "@/utils/sidebar-items";
 
 const Sidebar = ({ isOpen, toggleSideBar }) => {
   const consume_data = process.env.NEXT_PUBLIC_FAKER_DATA_HEAVY === "true";
@@ -63,35 +57,27 @@ const Sidebar = ({ isOpen, toggleSideBar }) => {
           </div>
 
           <div className="mt-4">
-            <div className="flex items-center space-x-4 py-4">
-              <IconUser size={32} />
-              <h2 className="font-bold text-xl">Profile</h2>
-            </div>
-
-            <div className="flex items-center space-x-4 py-4">
-              <IconBrandX size={32} />
-              <h2 className="font-bold text-xl">Premium</h2>
-            </div>
-
-            <div className="flex items-center space-x-4 py-4">
-              <IconNotes size={32} />
-              <h2 className="font-bold text-xl">Lists</h2>
-            </div>
-
-            <div className="flex items-center space-x-4 py-4">
-              <IconBookmark size={32} />
-              <h2 className="font-bold text-xl">Bookmarks</h2>
-            </div>
-
-            <div className="flex items-center space-x-4 py-4">
-              <IconUsers size={32} />
-              <h2 className="font-bold text-xl">Communities</h2>
-            </div>
-
-            <div className="flex items-center space-x-4 py-4">
-              <IconCash size={32} />
-              <h2 className="font-bold text-xl">Monetization</h2>
-            </div>
+            {itemsDrawer.map((item) =>
+              item.requiresUsername ? (
+                <Link
+                  key={item}
+                  href={`/${faker.person.lastName()}${item.link}`}
+                  className="flex items-center space-x-4 py-4"
+                >
+                  {item.icon}
+                  <h2 className="font-bold text-xl">{item.title}</h2>
+                </Link>
+              ) : (
+                <Link
+                  key={item}
+                  href={`${item.link}`}
+                  className="flex items-center space-x-4 py-4"
+                >
+                  {item.icon}
+                  <h2 className="font-bold text-xl">{item.title}</h2>
+                </Link>
+              )
+            )}
           </div>
 
           <Divider />

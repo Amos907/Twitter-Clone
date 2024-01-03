@@ -24,8 +24,8 @@ const Explore = () => {
   return (
     <main>
       <OffsetSectionContainer>
-        <div>
-          <header className="flex justify-around mt-2 space-x-2 mx-3">
+        <section>
+          <div className="flex justify-around mt-2 space-x-2 mx-3">
             <figure className="md:hidden" onClick={toggleSideBar}>
               <Image
                 className="rounded-full"
@@ -53,7 +53,7 @@ const Explore = () => {
             </div>
 
             <IconSettingsFilled size={30} className="mt-1" />
-          </header>
+          </div>
 
           <section className="mx-3">
             <div className="rounded-lg p-3 mt-4 space-y-3">
@@ -261,7 +261,7 @@ const Explore = () => {
               <Divider />
             </div>
           ))}
-        </div>
+        </section>
         <div>
           <div className="bg-light-200 rounded-lg p-3 mt-4 space-y-3">
             <p className="font-bold text-xl">Who to follow</p>

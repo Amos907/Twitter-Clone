@@ -38,7 +38,7 @@ export default function Home() {
   return (
     <main>
       <OffsetSectionContainer>
-        <div>
+        <section>
           <Navbar />
           <Divider my="xs" />
           <div className="">
@@ -169,11 +169,11 @@ export default function Home() {
           {/* <div className="">
             <PostOptions isOpen={open} toggleModal={toggleModal} />
           </div> */}
-        </div>
+        </section>
 
-        <div>
+        <section>
           <Trends />
-        </div>
+        </section>
       </OffsetSectionContainer>
     </main>
   );

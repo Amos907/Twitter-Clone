@@ -107,6 +107,19 @@ const Lists = () => {
               </div>
             ))}
           </div>
+
+          <p className="text-blue cursor-pointer pt-4">Show more</p>
+        </div>
+
+        <Divider />
+
+        <div className="p-6">
+          <p className="font-bold text-xl">Your Lists</p>
+          <p className="m-2 mt-8 text-light-400">
+            {
+              "You haven't created or followed any lists. When you do, they'll show up here."
+            }
+          </p>
         </div>
       </section>
 
