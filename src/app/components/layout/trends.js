@@ -52,7 +52,7 @@ const Trends = () => {
                 />
               </figure>
 
-              <p className="capitalize text-sm font-semibold">
+              <p className="capitalize text-sm font-semibold overflow-hidden">
                 {faker.lorem.words(3)}
               </p>
 
@@ -145,7 +145,7 @@ const Trends = () => {
               </div>
             </div>
 
-            <Button color="dark" className="rounded-xl">
+            <Button color="black" className="rounded-xl">
               follow
             </Button>
           </div>
