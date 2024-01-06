@@ -48,7 +48,7 @@ const Explore = () => {
               </div>
 
               <div className="rounded-r-lg cursor-pointer pt-1">
-                <IconSearch size="2em" className="p-1" />
+                <IconSearch size={32} className="p-1" />
               </div>
             </div>
 

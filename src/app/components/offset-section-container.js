@@ -3,7 +3,7 @@ import SidebarMain from "./layout/sidebar-main";
 
 export default function OffsetSectionContainer({ children }) {
   return (
-    <section className="md:flex lg:justify-center">
+    <section className="md:flex lg:justify-center h-screen">
       <div className="hidden md:flex justify-end md:w-1/6 mr-8 h-80 md:mt-4">
         <SidebarMain />
       </div>
