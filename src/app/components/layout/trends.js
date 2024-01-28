@@ -9,7 +9,7 @@ const Trends = () => {
 
   return (
     <div>
-      <div className="hidden rounded-lg bg-light-200  md:flex justify-between w-80 h-10 my-auto mb-2">
+      <div className="hidden rounded-lg bg-light-200 md:flex justify-between w-80 h-10 my-auto mb-2">
         <div className="flex-grow justify-center pl-4">
           <Autocomplete
             variant="unstyled"

@@ -21,7 +21,7 @@ const Messages = () => {
       <section className="hidden md:flex justify-end md:w-1/6 mr-8 h-80 md:mt-4">
         <SidebarMain />
       </section>
-      <section className="flex-grow md:border-l border-r overflow-y-scroll flex-shrink md:w-3/4 lg:w-1/4 md:flex-none md:mt-4">
+      <section className="flex-grow md:border-l border-r overflow-y-scroll flex-shrink md:w-3/5 lg:w-1/5 md:flex-none md:mt-4">
         <header className="flex justify-between mt-2 space-x-2 mx-3 md:mx-2">
           <div className="flex items-center space-x-4 md:space-x-2">
             <figure className="md:hidden">

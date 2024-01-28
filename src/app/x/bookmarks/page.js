@@ -42,7 +42,7 @@ const Bookmarks = () => {
           </div>
         </div> */}
 
-        {faker.datatype.array(2).map((item) => (
+        {faker.datatype.array(22).map((item) => (
           <div key={item} className="">
             <div className="p-4 pb-1 flex justify-between">
               <div className="flex">

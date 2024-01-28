@@ -40,11 +40,11 @@ export default function Home() {
       <OffsetSectionContainer>
         <section>
           <Navbar />
-          <Divider my="xs" />
+          {/* <Divider my="xs" /> */}
           <div className="">
-            {faker.datatype.array(2).map((item) => (
-              <div key={item} className="">
-                <div className="p-4 pb-1 flex justify-between">
+            {faker.datatype.array(22).map((item) => (
+              <div key={item} className="-mt-3 hover:bg-gray-100">
+                <div className="pt-2 px-4 flex justify-between">
                   <div className="flex">
                     <figure className="">
                       <Image
@@ -82,7 +82,7 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className="mt-1">
+                  <div className="">
                     <IconDots onClick={toggleModal} />
                   </div>
                 </div>

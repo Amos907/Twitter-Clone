@@ -9,7 +9,7 @@ const SidebarMain = () => {
   const consume_data = process.env.NEXT_PUBLIC_FAKER_DATA_HEAVY === "true";
 
   return (
-    <div className="">
+    <div className="md:fixed">
       <div className="space-y-3 mt-2">
         <div>
           <Link href="/" className="pb-4">
